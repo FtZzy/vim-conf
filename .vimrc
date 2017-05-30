@@ -18,6 +18,9 @@ Plugin 'gmarik/Vundle.vim'			" Nécessaire
 " Autres plugins que Vundle doit gérer
 Plugin 'scrooloose/nerdtree'
 
+" Solarized
+Plugin 'altercation/vim-colors-solarized'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -25,6 +28,14 @@ syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fin Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Préférence pour zsh
+if filereadable("/bin/zsh")
+    let g:syntastic_shell = '/bin/zsh'
+else
+    let g:syntastic_shell = '/bin/bash'
+endif
 
 
 " Comportement Vim
@@ -35,6 +46,8 @@ set novisualbell
 set noerrorbells
 set autoread					" Recharche le fichier si modifié ailleurs
 set ssop=buffers,curdir,options,tabpages,winsize  " Changement vimrc
+set encoding=utf-8              " Définion du terminal en utf-8
+set mouse=a                     " Souris activée
 
 
 " Configuration globale
@@ -48,9 +61,13 @@ set showmatch 					" Montre le lien des parenthèses
 set matchpairs+=<:>				" Ajoute <> à la vérification
 
 " Indentation
-set tabstop=4					" 1 tab représente 4 espaces
-set autoindent					" Active l'autoindentation
-
+set expandtab			" Transforme les tabs en espaces
+set tabstop=4			" 1 tab représente 4 espaces
+set shiftwidth=4		" 4 espaces pour l'autoindentation
+set autoindent			" Active l'autoindentation
+set copyindent			" Copie l'indentation en autoindent
+set shiftround			" Utilise n shiftwidth avec <>
+set smarttab			" Suppression intelligente avec tabs
 
 " Affichage
 set title		" Met a jour le titre de la fenetre/terminal
@@ -59,8 +76,8 @@ set ruler		" Affiche poisition du curseur
 set cursorline		" Change couleur de la ligne du curseur
 " Surligne le mot en dessous du curseur
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-set scrolloff=4		" Affiche au moins 6 lignes autour du
-			" curseur (pour le scroll)
+set scrolloff=6		" Affiche au moins 6 lignes autour du
+					" curseur (pour le scroll)
 
 " Recherche
 set ignorecase		" Ignore casse lors d'une recherche...
@@ -81,21 +98,27 @@ set wildignore+=*.pyc 			" Python Object codes
 set wildignore+=*.class			" java/scala class files
 
 
-" Navigation
-imap ;; <Esc>
-map ;; <Esc>
-map <leader>v :vsplit<CR>
-
-" Souris activée
-set mouse=a
-
 
 " Coloration
 """"""""""""
-"colorscheme delek	" Thème utilisé
 set background=dark	" Version sombre
+"colorscheme solarized8	" Thème utilisé
+
 
 " Raccourcis
 """"""""""""
-map <leader>n :NERDTreeToggle<cr>
+" Maps
+imap ;; <Esc>
+map ;; <Esc>
+map ; :
+map 0 ^
 
+" Gestion fenêtres 
+map <leader>v :vsplit<CR>
+map <leader>h :split<CR>
+map <Leader>> :tabnext<CR>
+map <Leader>< :tabprevious<CR>
+map <Leader>t :tabnew<CR>
+
+" Autres
+map <leader>n :NERDTreeToggle<cr>
