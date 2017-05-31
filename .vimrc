@@ -7,7 +7,7 @@
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins import
+" Importation des plugins (Vundle)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -18,7 +18,6 @@ Plugin 'gmarik/Vundle.vim'			" Nécessaire
 " Autres plugins que Vundle doit gérer
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'altercation/vim-colors-solarized'
 
 
 call vundle#end()
@@ -72,7 +71,6 @@ set smarttab			" Suppression intelligente avec tabs
 set title		" Met a jour le titre de la fenetre/terminal
 set number 		" Affiche numéro lignes
 set ruler		" Affiche poisition du curseur
-set cursorline		" Change couleur de la ligne du curseur
 " Surligne le mot en dessous du curseur
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 set scrolloff=6		" Affiche au moins 6 lignes autour du
@@ -82,7 +80,7 @@ set scrolloff=6		" Affiche au moins 6 lignes autour du
 set ignorecase		" Ignore casse lors d'une recherche...
 set smartcase		" ... sauf si elle contient une majusule
 set incsearch		" Surligne les resultats de recherche pendant
-			" la saisie
+                    " la saisie
 set hlsearch		" Surligne les resultats de recherche
 
 " Exclut certains fichiers de la completion
@@ -97,11 +95,10 @@ set wildignore+=*.pyc 			" Python Object codes
 set wildignore+=*.class			" java/scala class files
 
 
-
 " Coloration
 """"""""""""
 set background=dark	" Version sombre
-" colorscheme solarized	" Thème utilisé
+" colorscheme zenburn	" Thème utilisé
 
 
 " Raccourcis
@@ -121,3 +118,25 @@ map <Leader>t :tabnew<CR>
 
 " Autres
 map <leader>n :NERDTreeToggle<cr>
+map <leader>f :NERDTreeFind<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Scripts et Fonctions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Retourne à la même ligne à la réouverture
+augroup line_return
+    au!
+    au BufReadPost * 
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \ execute 'normal! g`"zvzz' |
+                \ endif
+augroup END
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Utilise .vimrc.local si présent
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("\~/.vimrc.local"))
+    source \~/.vimrc.local
+endif

@@ -35,6 +35,8 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 * ;; ~ Esc
 * 0 ~ ^
+* Mouse is activate
+
 
 
 ### Navigation
@@ -48,7 +50,8 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 ### NERDTree
 
-* ,n ~ hide or display the NERDTree
+* ,n ~ hide/display the NERDTree
+* ,f ~ display the NERDTree at current file
 
 
 
