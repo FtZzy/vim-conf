@@ -2,7 +2,9 @@
 
 It is my personal Vim configuration!
 
-## Install
+
+
+## INSTALL
 
 First, remove your old `.vim` and `.vimrc`.
 ```
@@ -12,7 +14,8 @@ $ ln -sf .vim/.vimrc .
 ```
 By default ctags use zsh if it is installed, else use bash.
 
-## Vundle
+
+### Vundle
 
 I use [Vundle](https://github.com/VundleVim/Vundle.vim) (_Vim Bundle_) so you need it.
 
@@ -22,19 +25,31 @@ I use [Vundle](https://github.com/VundleVim/Vundle.vim) (_Vim Bundle_) so you ne
 More informations on [https://github.com/VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim).
 
 
-## Shorcuts
+
+## USE
 
 My **leader key is ','** but you can change it in `.vimrc`.
-Here a part of my shortcuts:
-| Key combination | Command |
-| :---------------: | :-------: |
-|       ;;        |  <Esc>  |
-|       0         | ^ |
-|       ,v        | vertical split |
-|       ,h        | horizontal split  | 
-|       ,t        | new tab |
-|   ,< *and* ,>   | tab navigation |
-|       ,n      | hide or display the NERDTree |
+
+
+### Global shorcuts
+
+* ;; *<-->* <Esc>
+* 0 *<-->* ^
+
+
+### Navigation
+
+* ,v *<-->* vertical split
+* ,h *<-->* horizontal split
+* ,t *<-->* new tab
+* ,< *<-->* previous tab
+* ,> *<-->* next tab
+
+
+### NERDTree
+
+* ,n *<-->* hide or display the NERDTree
+
 
 
 # LICENSE
