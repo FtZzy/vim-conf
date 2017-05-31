@@ -33,22 +33,22 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 ### Global shorcuts
 
-* ;; *<-->* <Esc>
-* 0 *<-->* ^
+* ;; ~ Esc
+* 0 ~ ^
 
 
 ### Navigation
 
-* ,v *<-->* vertical split
-* ,h *<-->* horizontal split
-* ,t *<-->* new tab
-* ,< *<-->* previous tab
-* ,> *<-->* next tab
+* ,v ~ vertical split
+* ,h ~ horizontal split
+* ,t ~ new tab
+* ,< ~ previous tab
+* ,> ~ next tab
 
 
 ### NERDTree
 
-* ,n *<-->* hide or display the NERDTree
+* ,n ~ hide or display the NERDTree
 
 
 
