@@ -18,7 +18,6 @@ Plugin 'gmarik/Vundle.vim'			" Nécessaire
 " Autres plugins que Vundle doit gérer
 Plugin 'scrooloose/nerdtree'
 
-" Solarized
 Plugin 'altercation/vim-colors-solarized'
 
 
@@ -102,7 +101,7 @@ set wildignore+=*.class			" java/scala class files
 " Coloration
 """"""""""""
 set background=dark	" Version sombre
-"colorscheme solarized8	" Thème utilisé
+" colorscheme solarized	" Thème utilisé
 
 
 " Raccourcis
