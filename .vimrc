@@ -25,10 +25,12 @@ Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
 
 " Coloration et affichage
-Plugin 'sickill/vim-monokai'        " Thème coloration
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'SirVer/ultisnips'			" Snippets
+Plugin 'honza/vim-snippets'         " ... together
 
 
 call vundle#end()
@@ -112,7 +114,9 @@ set wildignore+=*.class			" java/scala class files
 " Thème couleur
 set background=dark	        " Version sombre
 set t_Co=256
-colorscheme monokai         " Choix du thème
+if has("gui_running")
+    colorscheme solarized         " Choix du theme
+endif
 
 " Vim-airline
 set laststatus=2            " Toujours afficher vim-airline
@@ -134,9 +138,22 @@ map <Leader>> :tabnext<CR>
 map <Leader>< :tabprevious<CR>
 map <Leader>t :tabnew<CR>
 
-" Autres
+" Décaler lignes avec Alt+j/k
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" NERDTree
 map <leader>n :NERDTreeToggle<cr>
 map <leader>f :NERDTreeFind<cr>
+
+" Vim snippets (Python, HTML, Js, Markdown, Scala, ...)
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-g>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
