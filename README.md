@@ -51,8 +51,8 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 ### NERDTree
 
-* ,n ~ hide/display the NERDTree
-* ,f ~ display the NERDTree at current file
+* `,n` ~ hide/display the NERDTree
+* `,f` ~ display the NERDTree at current file
 
 
 
