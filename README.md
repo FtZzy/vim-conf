@@ -34,19 +34,19 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 ### Global shorcuts
 
-* ;; ~ Esc
-* 0 ~ ^
+* `;;` ~ `<Esc>`
+* `0` ~ `^`
 * Mouse is activated
 
 
 
 ### Navigation
 
-* ,v ~ vertical split
-* ,h ~ horizontal split
-* ,t ~ new tab
-* ,< ~ previous tab
-* ,> ~ next tab
+* `,v` ~ vertical split
+* `,h` ~ horizontal split
+* `,t` ~ new tab
+* `,<` ~ previous tab
+* `,>` ~ next tab
 
 
 ### NERDTree

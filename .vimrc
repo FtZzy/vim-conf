@@ -18,9 +18,10 @@ Plugin 'gmarik/Vundle.vim'			" Nécessaire
 " Autres plugins que Vundle doit gérer
 Plugin 'scrooloose/nerdtree'        " Arborescence fichier
 Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto-complétion
+Plugin 'jiangmiao/auto-pairs'       " Gestion des parenthèses
 Plugin 'tpope/vim-fugitive'         " Utilisation de git depuis vim
 Plugin 'airblade/vim-gitgutter'     " Montre moddifications git
-Plugin 'scrooloose/syntastic'       " Pour la syntaxe
+Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
 
 
@@ -60,7 +61,7 @@ let mapleader=","				" Leader key est ','
 set backspace=indent,eol,start	" Retour en arrière 'normal'
 set wrap 						" Retour à la ligne si trop longue
 set showmatch 					" Montre le lien des parenthèses
-set matchpairs+=<:>				" Ajoute <> à la vérification
+
 
 " Indentation
 set expandtab			" Transforme les tabs en espaces
