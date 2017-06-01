@@ -16,8 +16,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'			" Nécessaire
 
 " Autres plugins que Vundle doit gérer
-Plugin 'scrooloose/nerdtree'
-
+Plugin 'scrooloose/nerdtree'        " Arborescence fichier
+Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto-complétion
+Plugin 'tpope/vim-fugitive'         " Utilisation de git depuis vim
+Plugin 'airblade/vim-gitgutter'     " Montre moddifications git
+Plugin 'scrooloose/syntastic'       " Pour la syntaxe
+Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
 
 
 call vundle#end()
@@ -50,11 +54,11 @@ set mouse=a                     " Souris activée
 
 " Configuration globale
 """""""""""""""""""""""
-let mapleader=","				" Leader key is ','
+let mapleader=","				" Leader key est ','
 
 " Rédaction
 set backspace=indent,eol,start	" Retour en arrière 'normal'
-set nowrap 						" PAS de retour à la ligne si trop longue
+set wrap 						" Retour à la ligne si trop longue
 set showmatch 					" Montre le lien des parenthèses
 set matchpairs+=<:>				" Ajoute <> à la vérification
 

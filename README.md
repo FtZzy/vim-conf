@@ -1,6 +1,7 @@
 # vim-conf
 
-It is my personal Vim configuration!
+It is my personal Vim configuration _with comments in french_!
+Inspired by Vincent Jousse (thanks his book *vim pour les humains*) and by [Charles Gueunet](https://github.com/CharlesGueunet) but simplified.
 
 
 
@@ -35,7 +36,7 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 * ;; ~ Esc
 * 0 ~ ^
-* Mouse is activate
+* Mouse is activated
 
 
 
@@ -56,4 +57,4 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 
 # LICENSE
- Copyright (c) 2017 [Nathan Krupa](https://github.com/FtZzy)
+Copyright (c) 2017 [Krupa Nathan](https://github.com/FtZzy)
