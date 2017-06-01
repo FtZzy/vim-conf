@@ -1,6 +1,6 @@
 # vim-conf
 
-It is my personal Vim configuration _with comments in french_!
+It is my personal Vim configuration _with comments in french_! I use Vim in _Terminator_ and with `zsh`.
 Inspired by Vincent Jousse (thanks his book *vim pour les humains*) and by [Charles Gueunet](https://github.com/CharlesGueunet) but simplified.
 
 
@@ -42,17 +42,34 @@ My **leader key is ','** but you can change it in `.vimrc`.
 
 ### Navigation
 
-* `,v` ~ vertical split
-* `,h` ~ horizontal split
-* `,t` ~ new tab
-* `,<` ~ previous tab
-* `,>` ~ next tab
+* `<leader>v` ~ vertical split
+* `<leader>h` ~ horizontal split
+* `<leader>t` ~ new tab
+* `<leader><` ~ previous tab
+* `<leader>>` ~ next tab
 
 
 ### NERDTree
 
-* `,n` ~ hide/display the NERDTree
-* `,f` ~ display the NERDTree at current file
+* `<leader>n` ~ hide/display the NERDTre
+* `<leader>f` ~ display the NERDTree at current file
+
+
+### Vim-fugitive
+
+* `:Gwrite` ~ Add current file
+* `:Gread` ~ Revert current file
+* `:Gremove` ~ Delete current file
+* `:Gmove` ~ Rename curent file
+* `:Gdiff` ~ Show difference between actual and last version for the current file
+* And a lot of more, see them [here](http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/).
+
+
+### NERDCommenter
+
+* `<leader>cc` ~ comment in visual mode
+* `<leader>c<space>` ~ comment/uncomment line(s)
+* And a lot of more, see them [here](https://github.com/scrooloose/nerdcommenter).
 
 
 

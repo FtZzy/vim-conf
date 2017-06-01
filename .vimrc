@@ -24,6 +24,12 @@ Plugin 'airblade/vim-gitgutter'     " Montre moddifications git
 Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
 
+" Coloration et affichage
+Plugin 'sickill/vim-monokai'        " Thème coloration
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+
 
 call vundle#end()
 filetype plugin indent on
@@ -76,6 +82,7 @@ set smarttab			" Suppression intelligente avec tabs
 set title		" Met a jour le titre de la fenetre/terminal
 set number 		" Affiche numéro lignes
 set ruler		" Affiche poisition du curseur
+set cursorline  " Surligne la ligne du curseur
 " Surligne le mot en dessous du curseur
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 set scrolloff=6		" Affiche au moins 6 lignes autour du
@@ -100,10 +107,16 @@ set wildignore+=*.pyc 			" Python Object codes
 set wildignore+=*.class			" java/scala class files
 
 
-" Coloration
-""""""""""""
-set background=dark	" Version sombre
-" colorscheme zenburn	" Thème utilisé
+" Coloration et affichage
+"""""""""""""""""""""""""
+" Thème couleur
+set background=dark	        " Version sombre
+set t_Co=256
+colorscheme monokai         " Choix du thème
+
+" Vim-airline
+set laststatus=2            " Toujours afficher vim-airline
+let g:airline_theme='base16'
 
 
 " Raccourcis
