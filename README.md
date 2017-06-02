@@ -87,5 +87,14 @@ Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, R
 
 
 
+## TODO
+
+* Fix solarized
+* Delete/show whitespace at the end of files
+* C++ & Js
+
+
+
+
 # LICENSE
 Copyright (c) 2017 [Krupa Nathan](https://github.com/FtZzy)

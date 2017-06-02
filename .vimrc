@@ -25,13 +25,16 @@ Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
 
 " Coloration et affichage
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'sickill/vim-monokai'        " Monokai colorscheme
+Plugin 'vim-airline/vim-airline'    " Bar du bas...
+Plugin 'vim-airline/vim-airline-themes' " ... et ses themes
 
-Plugin 'SirVer/ultisnips'			" Snippets
-Plugin 'honza/vim-snippets'         " ... together
+" Snippets
+Plugin 'SirVer/ultisnips'			" Snippets...
+Plugin 'honza/vim-snippets'         " ... vont ensemble
 
+" Python
+Plugin 'andviro/flake8-vim'         " Pep8
 
 call vundle#end()
 filetype plugin indent on
@@ -39,14 +42,6 @@ syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fin Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-" Préférence pour zsh
-if filereadable("/bin/zsh")
-    let g:syntastic_shell = '/bin/zsh'
-else
-    let g:syntastic_shell = '/bin/bash'
-endif
 
 
 " Comportement Vim
@@ -70,7 +65,6 @@ set backspace=indent,eol,start	" Retour en arrière 'normal'
 set wrap 						" Retour à la ligne si trop longue
 set showmatch 					" Montre le lien des parenthèses
 
-
 " Indentation
 set expandtab			" Transforme les tabs en espaces
 set tabstop=4			" 1 tab représente 4 espaces
@@ -80,13 +74,11 @@ set copyindent			" Copie l'indentation en autoindent
 set shiftround			" Utilise n shiftwidth avec <>
 set smarttab			" Suppression intelligente avec tabs
 
-" Affichage
+" Affichage élémentaire
 set title		" Met a jour le titre de la fenetre/terminal
 set number 		" Affiche numéro lignes
 set ruler		" Affiche poisition du curseur
 set cursorline  " Surligne la ligne du curseur
-" Surligne le mot en dessous du curseur
-autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 set scrolloff=6		" Affiche au moins 6 lignes autour du
 					" curseur (pour le scroll)
 
@@ -114,13 +106,17 @@ set wildignore+=*.class			" java/scala class files
 " Thème couleur
 set background=dark	        " Version sombre
 set t_Co=256
-if has("gui_running")
-    colorscheme solarized         " Choix du theme
-endif
+colorscheme monokai         " Choix du theme
 
 " Vim-airline
 set laststatus=2            " Toujours afficher vim-airline
 let g:airline_theme='base16'
+
+
+" Programmation
+"""""""""""""""
+" Python
+let g:PyFlakeOnWrite=1      " Vérification à la sauvegarde
 
 
 " Raccourcis
@@ -131,7 +127,7 @@ map ;; <Esc>
 map ; :
 map 0 ^
 
-" Gestion fenêtres 
+" Gestion fenêtres
 map <leader>v :vsplit<CR>
 map <leader>h :split<CR>
 map <Leader>> :tabnext<CR>
@@ -159,15 +155,24 @@ let g:UltiSnipsJumpBackwardTrigger="<c-g>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts et Fonctions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Surligne le mot en dessous du curseur
+"autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
 " Retourne à la même ligne à la réouverture
 augroup line_return
     au!
-    au BufReadPost * 
+    au BufReadPost *
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \ execute 'normal! g`"zvzz' |
                 \ endif
 augroup END
 
+" Préférence pour zsh
+if filereadable("/bin/zsh")
+    let g:syntastic_shell = '/bin/zsh'
+else
+    let g:syntastic_shell = '/bin/bash'
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Utilise .vimrc.local si présent
