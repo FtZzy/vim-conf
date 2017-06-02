@@ -40,6 +40,10 @@ My **leader key is ','** but you can change it in `.vimrc`.
 * Mouse is activated
 
 
+### Drag lines
+
+You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
+
 
 ### Navigation
 
@@ -71,6 +75,15 @@ My **leader key is ','** but you can change it in `.vimrc`.
 * `<leader>cc` ~ comment in visual mode
 * `<leader>c<space>` ~ comment/uncomment line(s)
 * And a lot of more, see them [here](https://github.com/scrooloose/nerdcommenter).
+
+
+### Snippets
+
+Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, Ruby, Scala and Supercollider.
+
+* `<tab>` ~ Expand trigger
+* `<Ctrl>b` ~ Jump forward trigger
+* `<Ctrl>g` ~ Jump backward trigger
 
 
 
