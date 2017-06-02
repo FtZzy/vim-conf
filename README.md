@@ -10,8 +10,8 @@ Inspired by Vincent Jousse (thanks his book *vim pour les humains*) and by [Char
 
 First, remove your old `.vim` and `.vimrc`.
 ```
-$ cd ~  
-$ git clone --recursive https://github.com/FtZzy/vim-conf.git .vim  
+$ cd ~
+$ git clone --recursive https://github.com/FtZzy/vim-conf.git .vim
 $ ln -sf .vim/.vimrc .
 ```
 By default ctags use zsh if it is installed, else use bash.
@@ -90,7 +90,6 @@ Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, R
 ## TODO
 
 * Fix solarized
-* Delete/show whitespace at the end of files
 * C++ & Js
 
 

@@ -113,6 +113,14 @@ set laststatus=2            " Toujours afficher vim-airline
 let g:airline_theme='base16'
 
 
+" Montre les espaces en fin de ligne
+highlight NoSpacesEOL ctermbg=blue ctermfg=white
+match NoSpacesEOL / \+$/
+" Suligne dépasse pas 80 caractères
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.*/
+
+
 " Programmation
 """""""""""""""
 " Python
