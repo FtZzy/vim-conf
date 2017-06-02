@@ -1,6 +1,7 @@
 # vim-conf
 
 It is my personal Vim configuration _with comments in french_! I use Vim in _Terminator_ and with `zsh`.
+
 Inspired by Vincent Jousse (thanks his book *vim pour les humains*) and by [Charles Gueunet](https://github.com/CharlesGueunet) but simplified.
 
 
