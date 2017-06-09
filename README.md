@@ -65,7 +65,7 @@ You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 * `:Gwrite` ~ Add current file
 * `:Gread` ~ Revert current file
 * `:Gremove` ~ Delete current file
-* `:Gmove` ~ Rename curent file
+* `:Gmove` ~ Rename current file
 * `:Gdiff` ~ Show difference between actual and last version for the current file
 * And a lot of more, see them [here](http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/).
 
@@ -84,6 +84,22 @@ Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, R
 * `<tab>` ~ Expand trigger
 * `<Ctrl>b` ~ Jump forward trigger
 * `<Ctrl>g` ~ Jump backward trigger
+
+
+### Spell Checker
+
+You can check the spell in vim.
+
+* `<F6>` ~ French
+* `<F7>` ~ English
+
+For the both you get the options:
+
+* `z=` ~ Display possible corrections
+* `zg` ~ Add to dictionary
+* `zug` ~ Cancel the addition
+* `]s` ~ Next misspelled word
+* `[s` ~ Previous misspelled word
 
 
 

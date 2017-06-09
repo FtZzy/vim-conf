@@ -17,17 +17,17 @@ Plugin 'gmarik/Vundle.vim'			" Nécessaire
 
 " Autres plugins que Vundle doit gérer
 Plugin 'scrooloose/nerdtree'        " Arborescence fichier
-Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto-complétion
+Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto complétion
 Plugin 'jiangmiao/auto-pairs'       " Gestion des parenthèses
 Plugin 'tpope/vim-fugitive'         " Utilisation de git depuis vim
-Plugin 'airblade/vim-gitgutter'     " Montre moddifications git
+Plugin 'airblade/vim-gitgutter'     " Montre modifications git
 Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
 
 " Coloration et affichage
-Plugin 'sickill/vim-monokai'        " Monokai colorscheme
+Plugin 'sickill/vim-monokai'        " Thème couleur
 Plugin 'vim-airline/vim-airline'    " Bar du bas...
-Plugin 'vim-airline/vim-airline-themes' " ... et ses themes
+Plugin 'vim-airline/vim-airline-themes' " ... et ses thèmes
 
 " Snippets
 Plugin 'SirVer/ultisnips'			" Snippets...
@@ -35,6 +35,9 @@ Plugin 'honza/vim-snippets'         " ... vont ensemble
 
 " Python
 Plugin 'andviro/flake8-vim'         " Pep8
+
+" JavaScript
+Plugin 'Shutnik/jshint2.vim'        " JSHint
 
 call vundle#end()
 filetype plugin indent on
@@ -50,9 +53,9 @@ set nocompatible				" Nécessaire
 set hidden						" Cache buffer
 set novisualbell
 set noerrorbells
-set autoread					" Recharche le fichier si modifié ailleurs
+set autoread					" Recherche le fichier si modifié ailleurs
 set ssop=buffers,curdir,options,tabpages,winsize  " Changement vimrc
-set encoding=utf-8              " Définion du terminal en utf-8
+set encoding=utf-8              " Définition du terminal en utf-8
 set mouse=a                     " Souris activée
 
 
@@ -66,39 +69,39 @@ set wrap 						" Retour à la ligne si trop longue
 set showmatch 					" Montre le lien des parenthèses
 
 " Indentation
-set expandtab			" Transforme les tabs en espaces
+set expandtab			" Transforme les tabulation en espaces
 set tabstop=4			" 1 tab représente 4 espaces
-set shiftwidth=4		" 4 espaces pour l'autoindentation
-set autoindent			" Active l'autoindentation
-set copyindent			" Copie l'indentation en autoindent
+set shiftwidth=4		" 4 espaces pour l'auto indentation
+set autoindent			" Active l'auto indentation
+set copyindent			" Copie l'indentation en auto indent
 set shiftround			" Utilise n shiftwidth avec <>
 set smarttab			" Suppression intelligente avec tabs
 
 " Affichage élémentaire
-set title		" Met a jour le titre de la fenetre/terminal
+set title		" Met a jour le titre de la fenêtre/terminal
 set number 		" Affiche numéro lignes
-set ruler		" Affiche poisition du curseur
+set ruler		" Affiche position du curseur
 set cursorline  " Surligne la ligne du curseur
 set scrolloff=6		" Affiche au moins 6 lignes autour du
 					" curseur (pour le scroll)
 
 " Recherche
 set ignorecase		" Ignore casse lors d'une recherche...
-set smartcase		" ... sauf si elle contient une majusule
-set incsearch		" Surligne les resultats de recherche pendant
+set smartcase		" ... sauf si elle contient une majuscule
+set incsearch		" Surligne les résultats de recherche pendant
                     " la saisie
-set hlsearch		" Surligne les resultats de recherche
+set hlsearch		" Surligne les résultats de recherche
 
-" Exclut certains fichiers de la completion
+" Exclut certains fichiers de la complétion
 set wildmenu
 set wildmode=list:longest
-set wildignore+=.hg,.git,.svn		" Version Controls
-set wildignore+=*.aux,*.out,*.toc 	" Latex Indermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Binary Imgs
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " Compiled Object files
-set wildignore+=*.sw? 			" Vim swap files
-set wildignore+=*.pyc 			" Python Object codes
-set wildignore+=*.class			" java/scala class files
+set wildignore+=.hg,.git,.svn
+set wildignore+=*.aux,*.out,*.toc 	" Fichiers latex
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " Compilateur
+set wildignore+=*.sw? 			" Vim
+set wildignore+=*.pyc 			" Python 
+set wildignore+=*.class			" java/scala
 
 
 " Coloration et affichage
@@ -106,17 +109,17 @@ set wildignore+=*.class			" java/scala class files
 " Thème couleur
 set background=dark	        " Version sombre
 set t_Co=256
-colorscheme monokai         " Choix du theme
+colorscheme monokai         " Choix du thême
 
 " Vim-airline
 set laststatus=2            " Toujours afficher vim-airline
-let g:airline_theme='base16'
+let g:airline_theme='ravenpower'
 
 
 " Montre les espaces en fin de ligne
 highlight NoSpacesEOL ctermbg=blue ctermfg=white
 match NoSpacesEOL / \+$/
-" Suligne dépasse pas 80 caractères
+" Surligne dépasse pas 80 caractères
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.*/
 
@@ -174,6 +177,10 @@ augroup line_return
                 \ execute 'normal! g`"zvzz' |
                 \ endif
 augroup END
+
+" Correcteur d'orthographe
+map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
+map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
 
 " Préférence pour zsh
 if filereadable("/bin/zsh")
