@@ -39,9 +39,6 @@ My **leader key is ','** but you can change it in `.vimrc`.
 * `0` ~ `^`
 * Mouse is activated
 
-
-### Drag lines
-
 You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 
 
@@ -56,11 +53,11 @@ You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 
 ### NERDTree
 
-* `<leader>n` ~ hide/display the NERDTre
+* `<leader>n` ~ hide/display the [NERDTree](https://github.com/scrooloose/nerdtree)
 * `<leader>f` ~ display the NERDTree at current file
 
 
-### Git with Vim-fugitive
+### Git with [Vim-fugitive](http://github.com/tpope/vim-fugitive)
 
 * `:Gwrite` ~ Add current file
 * `:Gread` ~ Revert current file
@@ -89,7 +86,7 @@ You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 
 ### Snippets
 
-Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, Ruby, Scala and Supercollider.
+[Snippets](https://github.com/honza/vim-snippets) are vailable for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, Ruby, Scala and Supercollider.
 
 * `<tab>` ~ Expand trigger
 * `<Ctrl>b` ~ Jump forward trigger
@@ -98,7 +95,13 @@ Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, R
 
 ### Python
 
-Coming soon...
+I use [flake](https://github.com/andviro/flake8-vim) for check if the file is pep8 when we save it. I use also [jedi](https://github.com/davidhalter/jedi-vim).
+
+* `<leader>g` ~ Go to assigments
+* `<leader>d` ~ Go to definition
+* `K` ~ Show documentation
+* `<leader>r` ~ Rename
+* `<leader>s` ~ Show usages
 
 
 
@@ -120,16 +123,18 @@ For the both you get the options:
 
 ### Others
 
-* `<leader>u` ~ Display UndoTree
-* `+/-` ~ Grow/reduce the expand-region
+* `<leader>u` ~ Display [UndoTree](https://github.com/mbbill/undotree)
+* `+/_` ~ Grow/reduce the [expand-region](https://github.com/terryma/vim-expand-region)
 * `<leader>-` ~ Fold between {}
+* `<leader>w` ~ Delete trailing spaces
 
 
 
 ## TODO
 
 * Fix solarized
-* C++ & Js
+* C++, scala, js, latex, markdown, ...
+* Tagbar
 
 
 

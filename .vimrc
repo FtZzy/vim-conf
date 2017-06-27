@@ -19,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'			" Nécessaire
 Plugin 'mhinz/vim-startify'         " Écran d'accueil
 Plugin 'scrooloose/nerdtree'        " Arborescence fichier
 Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto complétion
+Plugin 'ervandew/supertab'          " Complétion avec tab
 Plugin 'jiangmiao/auto-pairs'       " Gestion des parenthèses
 Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
@@ -131,9 +132,14 @@ let g:airline_theme='ravenpower'
 " Montre les espaces en fin de ligne
 highlight NoSpacesEOL ctermbg=blue ctermfg=white
 match NoSpacesEOL / \+$/
+nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 " Surligne dépasse pas 80 caractères
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.*/
+
+" Utiliser tab pour la complétion
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 
 " Programmation
@@ -176,6 +182,9 @@ map <leader>u :UndotreeToggle<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-g>"
+
+" Python
+let g:jedi#usages_command="<leader>s"
 
 " Réduction entre {}
 map <leader>- [{zf%<CR>
