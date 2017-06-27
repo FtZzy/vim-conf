@@ -16,28 +16,39 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'			" Nécessaire
 
 " Autres plugins que Vundle doit gérer
+Plugin 'mhinz/vim-startify'         " Écran d'accueil
 Plugin 'scrooloose/nerdtree'        " Arborescence fichier
 Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto complétion
 Plugin 'jiangmiao/auto-pairs'       " Gestion des parenthèses
-Plugin 'tpope/vim-fugitive'         " Utilisation de git depuis vim
-Plugin 'airblade/vim-gitgutter'     " Montre modifications git
 Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
 Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
+Plugin 'MattesGroeger/vim-bookmarks' " Met des annotations
+Plugin 'mbbill/undotree'            " Arbre des undo
+Plugin 'myusuf3/numbers.vim'        " Position relative en mode normal
+Plugin 'terryma/vim-expand-region'  " Selection simple d'une région
 
 " Coloration et affichage
 Plugin 'sickill/vim-monokai'        " Thème couleur
 Plugin 'vim-airline/vim-airline'    " Bar du bas...
 Plugin 'vim-airline/vim-airline-themes' " ... et ses thèmes
+Plugin 'luochen1990/rainbow'        " Coloration des symboles
+
+" Git
+Plugin 'tpope/vim-fugitive'         " Utilisation de git depuis vim
+Plugin 'airblade/vim-gitgutter'     " Montre modifications git
 
 " Snippets
 Plugin 'SirVer/ultisnips'			" Snippets...
 Plugin 'honza/vim-snippets'         " ... vont ensemble
 
 " Python
+Plugin 'davidhalter/jedi-vim'       " Python autocompletion
 Plugin 'andviro/flake8-vim'         " Pep8
 
 " JavaScript
 Plugin 'Shutnik/jshint2.vim'        " JSHint
+
+" Autres
 
 call vundle#end()
 filetype plugin indent on
@@ -48,7 +59,7 @@ syntax on
 
 
 " Comportement Vim
-""""""""""""""""""
+"""""""""""""""""
 set nocompatible				" Nécessaire
 set hidden						" Cache buffer
 set novisualbell
@@ -91,6 +102,7 @@ set smartcase		" ... sauf si elle contient une majuscule
 set incsearch		" Surligne les résultats de recherche pendant
                     " la saisie
 set hlsearch		" Surligne les résultats de recherche
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Exclut certains fichiers de la complétion
 set wildmenu
@@ -100,7 +112,7 @@ set wildignore+=*.aux,*.out,*.toc 	" Fichiers latex
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " Compilateur
 set wildignore+=*.sw? 			" Vim
-set wildignore+=*.pyc 			" Python 
+set wildignore+=*.pyc 			" Python
 set wildignore+=*.class			" java/scala
 
 
@@ -154,13 +166,23 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " NERDTree
-map <leader>n :NERDTreeToggle<cr>
-map <leader>f :NERDTreeFind<cr>
+map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
+
+" UndoTree
+map <leader>u :UndotreeToggle<CR>
 
 " Vim snippets (Python, HTML, Js, Markdown, Scala, ...)
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-g>"
+
+" Réduction entre {}
+map <leader>- [{zf%<CR>
+
+" Correcteur d'orthographe
+map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
+map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,10 +199,6 @@ augroup line_return
                 \ execute 'normal! g`"zvzz' |
                 \ endif
 augroup END
-
-" Correcteur d'orthographe
-map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
-map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
 
 " Préférence pour zsh
 if filereadable("/bin/zsh")

@@ -60,7 +60,7 @@ You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 * `<leader>f` ~ display the NERDTree at current file
 
 
-### Vim-fugitive
+### Git with Vim-fugitive
 
 * `:Gwrite` ~ Add current file
 * `:Gread` ~ Revert current file
@@ -77,6 +77,16 @@ You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 * And a lot of more, see them [here](https://github.com/scrooloose/nerdcommenter).
 
 
+### Bookmarks
+
+* `mm` ~ Add/remove bookmark at the current line
+* `mi` ~ Add/edit/remove annotation at current line
+* `mn` ~ Next bookmark
+* `mp` ~ Previous bookmark
+* `mc` ~ Clear bookmarks
+* And a lot of more, see them [here](https://github.com/MattesGroeger/vim-bookmarks).
+
+
 ### Snippets
 
 Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, Ruby, Scala and Supercollider.
@@ -84,6 +94,12 @@ Available for: Elixir, Falcon, HTML Django, Javascript, Markdown, PHP, Python, R
 * `<tab>` ~ Expand trigger
 * `<Ctrl>b` ~ Jump forward trigger
 * `<Ctrl>g` ~ Jump backward trigger
+
+
+### Python
+
+Coming soon...
+
 
 
 ### Spell Checker
@@ -100,6 +116,13 @@ For the both you get the options:
 * `zug` ~ Cancel the addition
 * `]s` ~ Next misspelled word
 * `[s` ~ Previous misspelled word
+
+
+### Others
+
+* `<leader>u` ~ Display UndoTree
+* `+/-` ~ Grow/reduce the expand-region
+* `<leader>-` ~ Fold between {}
 
 
 
