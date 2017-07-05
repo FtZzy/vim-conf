@@ -27,6 +27,8 @@ Plugin 'MattesGroeger/vim-bookmarks' " Met des annotations
 Plugin 'mbbill/undotree'            " Arbre des undo
 Plugin 'myusuf3/numbers.vim'        " Position relative en mode normal
 Plugin 'terryma/vim-expand-region'  " Selection simple d'une région
+Plugin 'corntrace/bufexplorer'      " Explore buffers
+Plugin 'tpope/vim-surround'         " Gère les entourages: '', (), ...
 
 " Coloration et affichage
 Plugin 'sickill/vim-monokai'        " Thème couleur
@@ -46,8 +48,19 @@ Plugin 'honza/vim-snippets'         " ... vont ensemble
 Plugin 'davidhalter/jedi-vim'       " Python autocompletion
 Plugin 'andviro/flake8-vim'         " Pep8
 
+" C/C++
+Plugin 'justmao945/vim-clang'       " Parse and complete
+Plugin 'octol/vim-cpp-enhanced-highlight' " Add highlights
+
+" Scala
+Plugin 'derekwyatt/vim-scala'
+
 " JavaScript
 Plugin 'Shutnik/jshint2.vim'        " JSHint
+
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Autres
 
@@ -138,14 +151,16 @@ nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.*/
 
-" Utiliser tab pour la complétion
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
+" Active rainbow parenthèses
+let g:rainbow_active=1
 
 " Programmation
 """""""""""""""
 " Python
 let g:PyFlakeOnWrite=1      " Vérification à la sauvegarde
+
+" C/C++
+let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
 
 
 " Raccourcis
@@ -163,6 +178,11 @@ map <Leader>> :tabnext<CR>
 map <Leader>< :tabprevious<CR>
 map <Leader>t :tabnew<CR>
 
+" Gestion buffers
+map <leader><Down> :ls<CR>
+map <leader><Right> :bn<CR>
+map <leader><Left> :bp<CR>
+
 " Décaler lignes avec Alt+j/k
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -170,6 +190,9 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Utiliser tab pour la complétion
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>

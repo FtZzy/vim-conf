@@ -51,6 +51,13 @@ You can drag line(s) with `<Ctrl>j` (down) or `<Ctrl>k` (down).
 * `<leader>>` ~ next tab
 
 
+### Buffers
+
+* `<leader>Down` ~ List all the buffers
+* `<leader>Right` ~ Go to the next buffer
+* `<leader>Left` ~ Go to previous buffer
+
+
 ### NERDTree
 
 * `<leader>n` ~ hide/display the [NERDTree](https://github.com/scrooloose/nerdtree)
@@ -104,6 +111,26 @@ I use [flake](https://github.com/andviro/flake8-vim) for check if the file is pe
 * `<leader>s` ~ Show usages
 
 
+### C/C++
+
+To use [clang](https://github.com/justmao945/vim-clang) you need to install it: `sudo apt-get install clang`!
+
+
+### Markdown
+
+* `gx` ~ Open link under the cursor
+* `]]` ~ Go to next header
+* `[[` ~ Go to previous header
+* `][` ~ Go to next sibling header
+* `[]` ~ Go to previous sibling header
+* `]c` ~ Go to current header
+* `]u` ~ Go to parent header
+* `:HeaderDecrease` ~ Decrease level of all headers
+* `:HeaderIncrease` ~ Increase level of all headers
+* `:TableFormat` ~ Format the table under the cursor
+* `:Toc` ~ Open table of contents
+* And a lot of more, see them [here](https://github.com/plasticboy/vim-markdown).
+
 
 ### Spell Checker
 
@@ -121,6 +148,15 @@ For the both you get the options:
 * `[s` ~ Previous misspelled word
 
 
+### Surrounding
+
+* `cs"'` ~ Change `"toto"` to `'toto'`
+* `cs'<q>` ~ Change `'toto'` to `<q>toto</q>`
+* `ds"` ~ Delete the delimiters
+* `yss)` ~ Put the entire line between parentheses
+* And a lot of more, see them [here](https://github.com/https://github.com/tpope/vim-surround).
+
+
 ### Others
 
 * `<leader>u` ~ Display [UndoTree](https://github.com/mbbill/undotree)
@@ -133,8 +169,10 @@ For the both you get the options:
 ## TODO
 
 * Fix solarized
-* C++, scala, js, latex, markdown, ...
-* Tagbar
+* Fix tagbar (with airline)
+* Reorganize the README (and the vimrc?)
+* Add languages
+
 
 
 
