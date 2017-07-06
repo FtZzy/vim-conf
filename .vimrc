@@ -171,6 +171,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:PyFlakeOnWrite=1      " Check flake8 when saving
 
 " C/C++
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
 
 
@@ -182,7 +183,6 @@ let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
 " Global key maps
 imap ;; <Esc>
 map ;; <Esc>
-map ; :
 map 0 ^
 
 " Stop highlight
