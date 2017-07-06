@@ -2,47 +2,62 @@
 " @file vimrc
 " @author Nathan Krupa
 " @version 0.2
-" @date 28-05-2017
+" @date 07-2017
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Importation des plugins (Vundle)
+" Import all the plugins (Vundle)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" On indique à Vundle de s'auto-gérer
-Plugin 'gmarik/Vundle.vim'			" Nécessaire
+" Vundle : self-manage
+Plugin 'gmarik/Vundle.vim'			" Requisite
 
-" Autres plugins que Vundle doit gérer
-Plugin 'mhinz/vim-startify'         " Écran d'accueil
-Plugin 'scrooloose/nerdtree'        " Arborescence fichier
-Plugin 'vim-scripts/AutoComplPop'   " Fenêtre d'auto complétion
-Plugin 'ervandew/supertab'          " Complétion avec tab
-Plugin 'jiangmiao/auto-pairs'       " Gestion des parenthèses
-Plugin 'scrooloose/syntastic'       " Vérifie la syntaxe
-Plugin 'scrooloose/nerdcommenter'   " Commenter facilement
-Plugin 'MattesGroeger/vim-bookmarks' " Met des annotations
-Plugin 'mbbill/undotree'            " Arbre des undo
-Plugin 'myusuf3/numbers.vim'        " Position relative en mode normal
-Plugin 'terryma/vim-expand-region'  " Selection simple d'une région
+" General
+"""""""""
+" Navigation
+Plugin 'scrooloose/nerdtree'        " File tree
 Plugin 'corntrace/bufexplorer'      " Explore buffers
-Plugin 'tpope/vim-surround'         " Gère les entourages: '', (), ...
 
-" Coloration et affichage
-Plugin 'sickill/vim-monokai'        " Thème couleur
-Plugin 'vim-airline/vim-airline'    " Bar du bas...
-Plugin 'vim-airline/vim-airline-themes' " ... et ses thèmes
-Plugin 'luochen1990/rainbow'        " Coloration des symboles
+" Completion
+Plugin 'vim-scripts/AutoComplPop'   " Autocompletion window
+Plugin 'ervandew/supertab'          " Completion with tab
 
-" Git
-Plugin 'tpope/vim-fugitive'         " Utilisation de git depuis vim
-Plugin 'airblade/vim-gitgutter'     " Montre modifications git
+" Writing
+Plugin 'jiangmiao/auto-pairs'       " Autoclose parentheses
+Plugin 'MattesGroeger/vim-bookmarks' " Annotations
+Plugin 'terryma/vim-expand-region'  " Select 'region'
+Plugin 'tpope/vim-surround'         " Change surrounding
+Plugin 'godlygeek/tabular'          " Align symbols (before markdown)
 
+" Others
+Plugin 'mbbill/undotree'            " Undo tree
+Plugin 'myusuf3/numbers.vim'        " Relative position in normal mode
+
+
+" Display
+"""""""""
+" Color themes
+Plugin 'sickill/vim-monokai'        " Colorschemes
+Plugin 'vim-airline/vim-airline'    " Bottom bar
+Plugin 'vim-airline/vim-airline-themes' " ... and the themes
+
+" Others
+Plugin 'mhinz/vim-startify'         " Homepage
+Plugin 'luochen1990/rainbow'        " Symbols coloration
+
+
+" Programmation
+"""""""""""""""
 " Snippets
 Plugin 'SirVer/ultisnips'			" Snippets...
-Plugin 'honza/vim-snippets'         " ... vont ensemble
+Plugin 'honza/vim-snippets'         " ... are together
+
+" Git
+Plugin 'tpope/vim-fugitive'         " Use git from vim
+Plugin 'airblade/vim-gitgutter'     " Show git modifications
 
 " Python
 Plugin 'davidhalter/jedi-vim'       " Python autocompletion
@@ -53,146 +68,150 @@ Plugin 'justmao945/vim-clang'       " Parse and complete
 Plugin 'octol/vim-cpp-enhanced-highlight' " Add highlights
 
 " Scala
-Plugin 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'       " All you need for Scala
 
 " JavaScript
 Plugin 'Shutnik/jshint2.vim'        " JSHint
 
 " Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'    " All you need for markdown
 
-" Autres
+" Others
+Plugin 'scrooloose/syntastic'       " Check syntastic
+Plugin 'scrooloose/nerdcommenter'   " Easy comments
 
 call vundle#end()
 filetype plugin indent on
 syntax on
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fin Vundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" Comportement Vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim comportment
 """""""""""""""""
-set nocompatible				" Nécessaire
-set hidden						" Cache buffer
+set nocompatible				" Requisite
+set hidden						" Hide buffer
 set novisualbell
 set noerrorbells
-set autoread					" Recherche le fichier si modifié ailleurs
-set ssop=buffers,curdir,options,tabpages,winsize  " Changement vimrc
-set encoding=utf-8              " Définition du terminal en utf-8
-set mouse=a                     " Souris activée
+set autoread					" Search if the file change
+set ssop=buffers,curdir,options,tabpages,winsize  " If change vimrc
+set encoding=utf-8              " Define utf-8
+set mouse=a                     " Enable mouse
 
 
-" Configuration globale
-"""""""""""""""""""""""
-let mapleader=","				" Leader key est ','
+" Global configuration
+""""""""""""""""""""""
+let mapleader=","				" The leader key is ','
 
-" Rédaction
-set backspace=indent,eol,start	" Retour en arrière 'normal'
-set wrap 						" Retour à la ligne si trop longue
-set showmatch 					" Montre le lien des parenthèses
+" Redaction
+set backspace=indent,eol,start	" 'Normal' back
+set wrap 						" Return if line too long
+set showmatch 					" Show link between parentheses
 
 " Indentation
-set expandtab			" Transforme les tabulation en espaces
-set tabstop=4			" 1 tab représente 4 espaces
-set shiftwidth=4		" 4 espaces pour l'auto indentation
-set autoindent			" Active l'auto indentation
-set copyindent			" Copie l'indentation en auto indent
-set shiftround			" Utilise n shiftwidth avec <>
-set smarttab			" Suppression intelligente avec tabs
+set expandtab			" Transform tabulation to space
+set tabstop=4			" 1 tab = 4 spaces
+set shiftwidth=4		" 4 spaces for autoindentation
+set autoindent			" Active autoindentation
+set copyindent			" Copy indentation with autoindent
+set shiftround			" Use n shiftwidth with < and >
+set smarttab			" Smart deletion with tabs
 
-" Affichage élémentaire
-set title		" Met a jour le titre de la fenêtre/terminal
-set number 		" Affiche numéro lignes
-set ruler		" Affiche position du curseur
-set cursorline  " Surligne la ligne du curseur
-set scrolloff=6		" Affiche au moins 6 lignes autour du
-					" curseur (pour le scroll)
+" Basic display
+set title		" Update title
+set number 		" Display line number
+set ruler		" Display cusor position
+set cursorline  " Highlight cursor line
+set scrolloff=6		" Display at list 6 lines around cursor
 
-" Recherche
-set ignorecase		" Ignore casse lors d'une recherche...
-set smartcase		" ... sauf si elle contient une majuscule
-set incsearch		" Surligne les résultats de recherche pendant
-                    " la saisie
-set hlsearch		" Surligne les résultats de recherche
-nnoremap <leader><space> :nohlsearch<cr>
+" Research
+set ignorecase		" Ignore case
+set smartcase		" ... except if contains uppercase
+set hlsearch		" Highlight the results
+set incsearch		" ... same while tapping
 
-" Exclut certains fichiers de la complétion
+" Ban files from completion
 set wildmenu
 set wildmode=list:longest
 set wildignore+=.hg,.git,.svn
-set wildignore+=*.aux,*.out,*.toc 	" Fichiers latex
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " Compilateur
+set wildignore+=*.aux,*.out,*.toc 	" Latex
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Pictures
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " Compilation
 set wildignore+=*.sw? 			" Vim
 set wildignore+=*.pyc 			" Python
-set wildignore+=*.class			" java/scala
+set wildignore+=*.class			" Java/Scala
 
 
-" Coloration et affichage
-"""""""""""""""""""""""""
-" Thème couleur
-set background=dark	        " Version sombre
-set t_Co=256
-colorscheme monokai         " Choix du thême
+" Coloration and display
+""""""""""""""""""""""""
+" Colorscheme
+set background=dark	        " Dark version
+colorscheme monokai         " Theme choice
 
 " Vim-airline
-set laststatus=2            " Toujours afficher vim-airline
-let g:airline_theme='ravenpower'
+let g:airline_theme='ravenpower'    " Bar theme
+set laststatus=2            " Always display vim-airline
 
-
-" Montre les espaces en fin de ligne
+" Display spaces to end of line
 highlight NoSpacesEOL ctermbg=blue ctermfg=white
 match NoSpacesEOL / \+$/
-nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" Surligne dépasse pas 80 caractères
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.*/
-
-" Active rainbow parenthèses
+" Enable rainbow parentheses
 let g:rainbow_active=1
+
 
 " Programmation
 """""""""""""""
+" Use tab for completion
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Python
-let g:PyFlakeOnWrite=1      " Vérification à la sauvegarde
+let g:PyFlakeOnWrite=1      " Check flake8 when saving
 
 " C/C++
 let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
 
 
-" Raccourcis
-""""""""""""
-" Maps
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim commands
+""""""""""""""
+" Global key maps
 imap ;; <Esc>
 map ;; <Esc>
 map ; :
 map 0 ^
 
-" Gestion fenêtres
+" Stop highlight
+nnoremap <leader><space> :nohlsearch<cr>
+
+" Delete blank spaces
+nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+"
+" Reduce between
+map <leader>- [{zf%<CR>
+
+" Spell checker
+map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
+map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
+
+
+" Plugin commands
+"""""""""""""""""
+" Window navigation
 map <leader>v :vsplit<CR>
 map <leader>h :split<CR>
 map <Leader>> :tabnext<CR>
 map <Leader>< :tabprevious<CR>
 map <Leader>t :tabnew<CR>
 
-" Gestion buffers
+" Buffer navigation
 map <leader><Down> :ls<CR>
 map <leader><Right> :bn<CR>
 map <leader><Left> :bp<CR>
-
-" Décaler lignes avec Alt+j/k
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-" Utiliser tab pour la complétion
-let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
@@ -209,21 +228,22 @@ let g:UltiSnipsJumpBackwardTrigger="<c-g>"
 " Python
 let g:jedi#usages_command="<leader>s"
 
-" Réduction entre {}
-map <leader>- [{zf%<CR>
-
-" Correcteur d'orthographe
-map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
-map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Scripts et Fonctions
+" Scripts et Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Surligne le mot en dessous du curseur
+" Drag lines with Alt+j/k
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Highlight word under cursor
 "autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
-" Retourne à la même ligne à la réouverture
+" Go back to the same line when reopening
 augroup line_return
     au!
     au BufReadPost *
@@ -232,15 +252,16 @@ augroup line_return
                 \ endif
 augroup END
 
-" Préférence pour zsh
+" Prefer zsh
 if filereadable("/bin/zsh")
     let g:syntastic_shell = '/bin/zsh'
 else
     let g:syntastic_shell = '/bin/bash'
 endif
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Utilise .vimrc.local si présent
+" Use .vimrc.local if present
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable(expand("\~/.vimrc.local"))
     source \~/.vimrc.local
