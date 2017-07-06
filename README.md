@@ -89,7 +89,7 @@ For the both you get the options:
 * `<leader>Down` ~ List all the buffers
 * `<leader>Right` ~ Go to the next buffer
 * `<leader>Left` ~ Go to previous buffer
-* More possibilities [here](https://github.com/corntrace/bufexplorer)
+* More possibilities [here](https://github.com/corntrace/bufexplorer).
 
 
 #### Files
