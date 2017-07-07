@@ -208,6 +208,8 @@ You can insert or delete brackets, parentheses, quotes and more containers in [p
 
 ### Display
 
+The [homepage](https://github.com/mhinz/vim-startify) when you launch `vim` allow to see recent files.
+
 I use the famous colorscheme [monokai](https://github.com/sickill/vim-monokai). My [airline](https://github.com/vim-airline/vim-airline)'s theme is set to _ravenpower_, among a big [choice](https://github.com/vim-airline/vim-airline-themes).
 
 In normal mode we get a relative position, to simplify the commands, with [number](https://github.com/myusuf3/numbers.vim).
@@ -219,7 +221,15 @@ Finally I use [rainbow](https://github.com/luochen1990/rainbow) to see the pairs
 ### Programmation
 
 I check [syntax](https://github.com/scrooloose/syntastic) for many languages.  
-In additional I add more [highlight](https://github.com/octol/vim-cpp-enhanced-highlight) for C++, syntastic color for [Scala](https://github.com/derekwyatt/vim-scala) and [JSHint](https://github.com/Shutnik/jshint2.vim) for JavaScript.
+In additional I add:
+
+* for C++:
+    * more [highlight](https://github.com/octol/vim-cpp-enhanced-highlight);
+    * set `std=++11` for syntax;
+* for Scala:
+    * [syntastic color](https://github.com/derekwyatt/vim-scala);
+* for JavaScript:
+    * [JSHint](https://github.com/Shutnik/jshint2.vim).
 
 
 
