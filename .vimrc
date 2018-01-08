@@ -40,6 +40,7 @@ Plugin 'myusuf3/numbers.vim'        " Relative position in normal mode
 " Display
 """""""""
 " Color themes
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'sickill/vim-monokai'        " Colorschemes
 Plugin 'vim-airline/vim-airline'    " Bottom bar
 Plugin 'vim-airline/vim-airline-themes' " ... and the themes
@@ -77,7 +78,7 @@ Plugin 'Shutnik/jshint2.vim'        " JSHint
 Plugin 'plasticboy/vim-markdown'    " All you need for markdown
 
 " Others
-Plugin 'scrooloose/syntastic'       " Check syntastic
+"Plugin 'scrooloose/syntastic'       " Check syntastic
 Plugin 'scrooloose/nerdcommenter'   " Easy comments
 
 call vundle#end()
