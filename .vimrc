@@ -1,8 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @file vimrc
 " @author Nathan Krupa
-" @version 0.2
-" @date 07-2017
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -22,8 +20,14 @@ Plugin 'scrooloose/nerdtree'        " File tree
 Plugin 'corntrace/bufexplorer'      " Explore buffers
 
 " Completion
-Plugin 'vim-scripts/AutoComplPop'   " Autocompletion window
-Plugin 'ervandew/supertab'          " Completion with tab
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+Plugin 'zchee/deoplete-jedi'
 
 " Writing
 Plugin 'jiangmiao/auto-pairs'       " Autoclose parentheses
@@ -63,6 +67,7 @@ Plugin 'airblade/vim-gitgutter'     " Show git modifications
 " Python
 Plugin 'davidhalter/jedi-vim'       " Python autocompletion
 Plugin 'andviro/flake8-vim'         " Pep8
+" Plugin 'dense-analysis/ale'       " Fix it
 
 " C/C++
 Plugin 'justmao945/vim-clang'       " Parse and complete
@@ -77,6 +82,9 @@ Plugin 'Shutnik/jshint2.vim'        " JSHint
 " Markdown
 Plugin 'plasticboy/vim-markdown'    " All you need for markdown
 
+" LaTeX
+Plugin 'vim-latex/vim-latex'
+
 " Others
 "Plugin 'scrooloose/syntastic'       " Check syntastic
 Plugin 'scrooloose/nerdcommenter'   " Easy comments
@@ -84,8 +92,6 @@ Plugin 'scrooloose/nerdcommenter'   " Easy comments
 call vundle#end()
 filetype plugin indent on
 syntax on
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
@@ -149,10 +155,11 @@ set wildignore+=*.class			" Java/Scala
 """"""""""""""""""""""""
 " Colorscheme
 set background=dark	        " Dark version
-colorscheme monokai         " Theme choice
+colorscheme solarized       " Theme choice
+"colorscheme monokai
 
 " Vim-airline
-let g:airline_theme='ravenpower'    " Bar theme
+let g:airline_theme='ravenpower'    " Bar themedense-analysis/ale
 set laststatus=2            " Always display vim-airline
 
 " Display spaces to end of line
@@ -165,11 +172,23 @@ let g:rainbow_active=1
 
 " Programmation
 """""""""""""""
+" Completion
+autocmd CompleteDone * silent! pclose!  " Ferme automatiquement fenetre d'aide
+let g:deoplete#enable_at_startup = 1    " Enable deoplete
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
 " Use tab for completion
-let g:SuperTabDefaultCompletionType = "<c-n>"
+"let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Python
-let g:PyFlakeOnWrite=1      " Check flake8 when saving
+let g:PyFlakeOnWrite = 0
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
+let g:ale_linters_explicit = 1
+let g:python_host_prog = '/home/nathan/Software/neovim/py2/bin/python'
+let g:python3_host_prog = '/home/nathan/Software/neovim/py3/bin/python'
 
 " C/C++
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
@@ -215,6 +234,8 @@ map <leader><Right> :bn<CR>
 map <leader><Left> :bp<CR>
 
 " NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
@@ -222,12 +243,14 @@ map <leader>f :NERDTreeFind<CR>
 map <leader>u :UndotreeToggle<CR>
 
 " Vim snippets (Python, HTML, Js, Markdown, Scala, ...)
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-g>"
 
 " Python
 let g:jedi#usages_command="<leader>s"
+let g:jedi#completions_enabled = 0
+let g:jedi#show_call_signatures = "2"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
