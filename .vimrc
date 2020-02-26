@@ -190,6 +190,8 @@ let g:ale_linters_explicit = 1
 let g:python_host_prog = '/home/nathan/Software/neovim/py2/bin/python'
 let g:python3_host_prog = '/home/nathan/Software/neovim/py3/bin/python'
 
+autocmd FileType python :setlocal colorcolumn=80 " Display column 80
+
 " C/C++
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
