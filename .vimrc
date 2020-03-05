@@ -73,6 +73,7 @@ Plugin 'andviro/flake8-vim'         " Pep8
 " C/C++
 Plugin 'justmao945/vim-clang'       " Parse and complete
 Plugin 'octol/vim-cpp-enhanced-highlight' " Add highlights
+Plugin 'majutsushi/tagbar'          " Browse the tags
 
 " Scala
 Plugin 'derekwyatt/vim-scala'       " All you need for Scala
@@ -197,6 +198,7 @@ autocmd FileType python :setlocal colorcolumn=80 " Display column 80
 " C/C++
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
+map <F8> :TagbarToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -208,6 +210,20 @@ let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
 imap ;; <Esc>
 map ;; <Esc>
 map 0 ^
+
+" Hardcore mode
+nnoremap <Left> :echo "No left for you!"<CR>
+vnoremap <Left> :<C-u>echo "No left for you!"<CR>
+inoremap <Left> <C-o>:echo "No left for you!"<CR>
+nnoremap <Right> :echo "No right for you!"<CR>
+vnoremap <Right> :<C-u>echo "No right for you!"<CR>
+inoremap <Right> <C-o>:echo "No right for you!"<CR>
+nnoremap <Up> :echo "No up for you!"<CR>
+vnoremap <Up> :<C-u>echo "No up for you!"<CR>
+inoremap <Up> <C-o>:echo "No up for you!"<CR>
+nnoremap <Down> :echo "No down for you!"<CR>
+vnoremap <Down> :<C-u>echo "No down for you!"<CR>
+inoremap <Down> <C-o>:echo "No down for you!"<CR>
 
 " Stop highlight
 nnoremap <leader><space> :nohlsearch<cr>
