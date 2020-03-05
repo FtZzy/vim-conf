@@ -39,6 +39,7 @@ Plugin 'godlygeek/tabular'          " Align symbols (before markdown)
 " Others
 Plugin 'mbbill/undotree'            " Undo tree
 Plugin 'myusuf3/numbers.vim'        " Relative position in normal mode
+Plugin 'matze/vim-move'             " Drag lines
 
 
 " Display
@@ -52,7 +53,6 @@ Plugin 'vim-airline/vim-airline-themes' " ... and the themes
 " Others
 Plugin 'mhinz/vim-startify'         " Homepage
 Plugin 'luochen1990/rainbow'        " Symbols coloration
-Plugin 'ryanoasis/vim-devicons'     " File type icons
 
 
 " Programmation
@@ -238,8 +238,6 @@ map <leader><Right> :bn<CR>
 map <leader><Left> :bp<CR>
 
 " NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
@@ -260,14 +258,6 @@ let g:jedi#show_call_signatures = "2"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts et Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Drag lines with Alt+j/k
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
 " Highlight word under cursor
 "autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
