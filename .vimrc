@@ -52,6 +52,7 @@ Plugin 'vim-airline/vim-airline-themes' " ... and the themes
 " Others
 Plugin 'mhinz/vim-startify'         " Homepage
 Plugin 'luochen1990/rainbow'        " Symbols coloration
+Plugin 'ryanoasis/vim-devicons'     " File type icons
 
 
 " Programmation
@@ -106,6 +107,7 @@ set autoread					" Search if the file change
 set ssop=buffers,curdir,options,tabpages,winsize  " If change vimrc
 set encoding=utf-8              " Define utf-8
 set mouse=a                     " Enable mouse
+set clipboard+=unnamedplus      " Global clipboard
 
 
 " Global configuration
