@@ -5,93 +5,88 @@
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Import all the plugins (Vundle)
+" Import all the plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle : self-manage
-Plugin 'gmarik/Vundle.vim'			" Requisite
+call plug#begin('~/.vim/plugged')
 
 " General
 """""""""
 " Navigation
-Plugin 'scrooloose/nerdtree'        " File tree
-Plugin 'corntrace/bufexplorer'      " Explore buffers
+Plug 'scrooloose/nerdtree'        " File tree
+Plug 'corntrace/bufexplorer'      " Explore buffers
 
 " Completion
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plugin 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi'
 
 " Writing
-Plugin 'jiangmiao/auto-pairs'       " Autoclose parentheses
-Plugin 'MattesGroeger/vim-bookmarks' " Annotations
-Plugin 'terryma/vim-expand-region'  " Select 'region'
-Plugin 'tpope/vim-surround'         " Change surrounding
-Plugin 'godlygeek/tabular'          " Align symbols (before markdown)
+Plug 'jiangmiao/auto-pairs'       " Autoclose parentheses
+Plug 'MattesGroeger/vim-bookmarks' " Annotations
+Plug 'terryma/vim-expand-region'  " Select 'region'
+Plug 'tpope/vim-surround'         " Change surrounding
+Plug 'godlygeek/tabular'          " Align symbols (before markdown)
 
 " Others
-Plugin 'mbbill/undotree'            " Undo tree
-Plugin 'myusuf3/numbers.vim'        " Relative position in normal mode
-Plugin 'matze/vim-move'             " Drag lines
+Plug 'mbbill/undotree'            " Undo tree
+Plug 'myusuf3/numbers.vim'        " Relative position in normal mode
+Plug 'matze/vim-move'             " Drag lines
 
 
 " Display
 """""""""
 " Color themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'sickill/vim-monokai'        " Colorschemes
-Plugin 'vim-airline/vim-airline'    " Bottom bar
-Plugin 'vim-airline/vim-airline-themes' " ... and the themes
+Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'        " Colorschemes
+Plug 'vim-airline/vim-airline'    " Bottom bar
+Plug 'vim-airline/vim-airline-themes' " ... and the themes
 
 " Others
-Plugin 'mhinz/vim-startify'         " Homepage
-Plugin 'luochen1990/rainbow'        " Symbols coloration
+Plug 'mhinz/vim-startify'         " Homepage
+Plug 'luochen1990/rainbow'        " Symbols coloration
 
 
 " Programmation
 """""""""""""""
 " Snippets
-Plugin 'SirVer/ultisnips'			" Snippets...
-Plugin 'honza/vim-snippets'         " ... are together
+Plug 'SirVer/ultisnips'			" Snippets...
+Plug 'honza/vim-snippets'         " ... are together
 
 " Git
-Plugin 'tpope/vim-fugitive'         " Use git from vim
-Plugin 'airblade/vim-gitgutter'     " Show git modifications
+Plug 'tpope/vim-fugitive'         " Use git from vim
+Plug 'airblade/vim-gitgutter'     " Show git modifications
 
 " Python
-Plugin 'davidhalter/jedi-vim'       " Python autocompletion
-Plugin 'andviro/flake8-vim'         " Pep8
-" Plugin 'dense-analysis/ale'       " Fix it
+Plug 'davidhalter/jedi-vim'       " Python autocompletion
+Plug 'andviro/flake8-vim'         " Pep8
 
 " C/C++
-Plugin 'justmao945/vim-clang'       " Parse and complete
-Plugin 'octol/vim-cpp-enhanced-highlight' " Add highlights
-Plugin 'majutsushi/tagbar'          " Browse the tags
+Plug 'justmao945/vim-clang'       " Parse and complete
+Plug 'octol/vim-cpp-enhanced-highlight' " Add highlights
+Plug 'majutsushi/tagbar'          " Browse the tags
 
 " Scala
-Plugin 'derekwyatt/vim-scala'       " All you need for Scala
+Plug 'derekwyatt/vim-scala'       " All you need for Scala
 
 " JavaScript
-Plugin 'Shutnik/jshint2.vim'        " JSHint
+Plug 'Shutnik/jshint2.vim'        " JSHint
 
 " Markdown
-Plugin 'plasticboy/vim-markdown'    " All you need for markdown
+Plug 'plasticboy/vim-markdown'    " All you need for markdown
 
 " LaTeX
-Plugin 'vim-latex/vim-latex'
+Plug 'vim-latex/vim-latex'
 
 " Others
-"Plugin 'scrooloose/syntastic'       " Check syntastic
-Plugin 'scrooloose/nerdcommenter'   " Easy comments
+Plug 'scrooloose/syntastic'       " Check syntastic
+Plug 'scrooloose/nerdcommenter'   " Easy comments
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 syntax on
 
