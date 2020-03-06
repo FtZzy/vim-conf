@@ -1,8 +1,6 @@
 # README for vim-conf
 
-It is my personal Vim configuration _with comments in french_! I use Vim on Ubuntu with _Terminator_ and with `zsh`.
-
-Inspired by Vincent Jousse (thanks his book *vim pour les humains*) and by [Charles Gueunet](https://github.com/CharlesGueunet) but simplified.
+It is my personal Vim/Neovim configuration! I use Neovim on Ubuntu (Linux) with _Terminator_ and `zsh`.
 
 
 
@@ -12,11 +10,11 @@ Inspired by Vincent Jousse (thanks his book *vim pour les humains*) and by [Char
 
 ### Vim-conf
 
-First, remove your old `.vim`, `init.vim` and `.vimrc`.
+First, remove your old folders `.vim/` and `nvim/` and files `init.vim` and `.vimrc`.
 ```
-$ cd ~
-$ git clone --recursive https://github.com/FtZzy/vim-conf.git .vim
-$ ln -sf .vim/init.vim .vimrc
+$ git clone --recursive https://github.com/FtZzy/vim-conf.git ~/.config/nvim
+$ ln -rs ~/.config/nvim ~/.vim
+$ ln -rs ~/.config/nvim/init.vim ~/.vimrc
 ```
 By default ctags use zsh if it is installed, else use bash.
 
@@ -24,12 +22,11 @@ By default ctags use zsh if it is installed, else use bash.
 
 ### Vundle
 
-I use [Vundle](https://github.com/VundleVim/Vundle.vim) (_Vim Bundle_) so you need it.
+I use [vim-plug](https://github.com/junegunn/vim-plug) so you need it.
 
-1. `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-1. Launch `vim` and run `:PluginInstall`
-
-More informations on [https://github.com/VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim).
+1. For nvim: `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+1. For vim: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+1. Launch `nvim` or `vim` and run `:PlugInstall`
 
 
 
@@ -43,7 +40,7 @@ I consider that you know how to use the default vim.
 ### Default shortcuts
 
 You don't need plugin to use them...
-The mouse is activated and my leader key is ','. You can change it in the file _.vimrc_.
+The mouse is activated and my leader key is ','. You can change it in the file _init.vim_.
 
 
 #### Global
@@ -139,7 +136,7 @@ For the both you get the options:
 #### Others
 
 * `<leader>u` ~ Display [UndoTree](https://github.com/mbbill/undotree)
-* `+/_` ~ Grow/reduce the [expand-region](https://github.com/terryma/vim-expand-region)
+* `+/-` ~ Grow/reduce the [expand-region](https://github.com/terryma/vim-expand-region)
 * `:Tabularize /=` ~ Align the symbols with [tabular](https://github.com/godlygeek/tabular)
 
 
@@ -201,7 +198,7 @@ Of course I use more plugins than see previously.
 
 ### Redaction
 
-The writing is easier with the [autocompletion](https://github.com/vim-scripts/AutoComplPop). You can also use the [tabulation](https://github.com/ervandew/supertab) to choose.
+The writing is easier with the [deoplete](https://github.com/Shougo/deoplete.nvim).
 
 You can insert or delete brackets, parentheses, quotes and more containers in [pair](https://github.com/jiangmiao/auto-pairs).
 
@@ -230,12 +227,6 @@ In additional I add:
     * [syntastic color](https://github.com/derekwyatt/vim-scala);
 * for JavaScript:
     * [JSHint](https://github.com/Shutnik/jshint2.vim).
-
-
-
-## TODO
-
-* Add languages
 
 
 
