@@ -237,6 +237,9 @@ map <leader><Down> :ls<CR>
 map <leader><Right> :bn<CR>
 map <leader><Left> :bp<CR>
 
+" Expand region
+map - <Plug>(expand_region_shrink)
+
 " NERDTree
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
