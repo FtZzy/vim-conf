@@ -176,9 +176,6 @@ let g:deoplete#enable_at_startup = 1    " Enable deoplete
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-" Use tab for completion
-"let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " Python
 let g:PyFlakeOnWrite = 0
 let g:ale_linters = {
@@ -208,17 +205,9 @@ map 0 ^
 
 " Hardcore mode
 nnoremap <Left> :echo "No left for you!"<CR>
-vnoremap <Left> :<C-u>echo "No left for you!"<CR>
-inoremap <Left> <C-o>:echo "No left for you!"<CR>
 nnoremap <Right> :echo "No right for you!"<CR>
-vnoremap <Right> :<C-u>echo "No right for you!"<CR>
-inoremap <Right> <C-o>:echo "No right for you!"<CR>
 nnoremap <Up> :echo "No up for you!"<CR>
-vnoremap <Up> :<C-u>echo "No up for you!"<CR>
-inoremap <Up> <C-o>:echo "No up for you!"<CR>
 nnoremap <Down> :echo "No down for you!"<CR>
-vnoremap <Down> :<C-u>echo "No down for you!"<CR>
-inoremap <Down> <C-o>:echo "No down for you!"<CR>
 
 " Stop highlight
 nnoremap <leader><space> :nohlsearch<cr>
@@ -226,7 +215,7 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Delete blank spaces
 nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "
-" Reduce between
+" Reduce between {}
 map <leader>- [{zf%<CR>
 
 " Spell checker
