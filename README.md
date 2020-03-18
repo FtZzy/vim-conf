@@ -199,6 +199,15 @@ Of course I use more plugins than see previously.
 ### Redaction
 
 The writing is easier with the [deoplete](https://github.com/Shougo/deoplete.nvim).
+```
+$ mkdir -p ~/Software/neovim/py2
+$ mkdir -p ~/Software/neovim/py3
+$ cd ~/Software/neovim
+$ virtualenv -p /usr/bin/python2.7 py2
+$ python3 -m venv py3
+$ /home/nathan/Software/neovim/py2/bin/pip install pynvim
+$ /home/nathan/Software/neovim/py3/bin/pip install pynvim
+```
 
 You can insert or delete brackets, parentheses, quotes and more containers in [pair](https://github.com/jiangmiao/auto-pairs).
 
