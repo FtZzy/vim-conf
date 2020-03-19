@@ -182,8 +182,8 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \}
 let g:ale_linters_explicit = 1
-let g:python_host_prog = '/home/nathan/Software/neovim/py2/bin/python'
-let g:python3_host_prog = '/home/nathan/Software/neovim/py3/bin/python'
+let g:python_host_prog = expand('~/Software/neovim/py2/bin/python')
+let g:python3_host_prog = expand('~/Software/neovim/py3/bin/python')
 
 autocmd FileType python :setlocal colorcolumn=80 " Display column 80
 
