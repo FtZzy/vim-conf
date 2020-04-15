@@ -54,7 +54,7 @@ Plug 'luochen1990/rainbow'        " Symbols coloration
 " Programmation
 """""""""""""""
 " Snippets
-Plug 'SirVer/ultisnips'			" Snippets...
+Plug 'SirVer/ultisnips'		      " Snippets...
 Plug 'honza/vim-snippets'         " ... are together
 
 " Git
@@ -83,7 +83,6 @@ Plug 'plasticboy/vim-markdown'    " All you need for markdown
 Plug 'vim-latex/vim-latex'
 
 " Others
-Plug 'scrooloose/syntastic'       " Check syntastic
 Plug 'scrooloose/nerdcommenter'   " Easy comments
 
 call plug#end()
@@ -178,17 +177,12 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Python
 let g:PyFlakeOnWrite = 0
-let g:ale_linters = {
-\   'python': ['flake8'],
-\}
-let g:ale_linters_explicit = 1
 let g:python_host_prog = expand('~/Software/neovim/py2/bin/python')
 let g:python3_host_prog = expand('~/Software/neovim/py3/bin/python')
 
 autocmd FileType python :setlocal colorcolumn=80 " Display column 80
 
 " C/C++
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:cpp_class_decl_highlight = 1  " octol/vim-cpp-enhanced-highlight
 map <F8> :TagbarToggle<CR>
 
@@ -252,11 +246,6 @@ let g:UltiSnipsExpandTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-g>"
 
-" Python
-let g:jedi#usages_command="<leader>s"
-let g:jedi#completions_enabled = 0
-let g:jedi#show_call_signatures = "2"
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts et Functions
@@ -272,13 +261,6 @@ augroup line_return
                 \ execute 'normal! g`"zvzz' |
                 \ endif
 augroup END
-
-" Prefer zsh
-if filereadable("/bin/zsh")
-    let g:syntastic_shell = '/bin/zsh'
-else
-    let g:syntastic_shell = '/bin/bash'
-endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
