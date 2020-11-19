@@ -16,14 +16,7 @@ Plug 'scrooloose/nerdtree'        " File tree
 Plug 'corntrace/bufexplorer'      " Explore buffers
 
 " Completion
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'zchee/deoplete-jedi'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Writing
 Plug 'jiangmiao/auto-pairs'       " Autoclose parentheses
@@ -62,7 +55,7 @@ Plug 'tpope/vim-fugitive'         " Use git from vim
 Plug 'airblade/vim-gitgutter'     " Show git modifications
 
 " Python
-Plug 'davidhalter/jedi-vim'       " Python autocompletion
+Plug 'neoclide/coc-python'       " Python autocompletion
 Plug 'andviro/flake8-vim'         " Pep8
 
 " C/C++
