@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Navigation
 Plug 'preservim/nerdtree'	    " File tree
-Plug 'corntrace/bufexplorer'	" Explore buffers
 Plug 'mbbill/undotree'          " Undo tree
 
 " Completion
@@ -91,13 +90,13 @@ let mapleader=","
 imap ;; <Esc>
 map ;; <Esc>
 map 0 ^
+map <Leader>t :tabnew<CR>
 map <Leader>> :tabnext<CR>
 map <Leader>< :tabprevious<CR>
-map <Leader>t :tabnew<CR>
 map <leader><Right> :bn<CR>
 map <leader><Left> :bp<CR>
 map <leader>n :NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
+map <leader>nf :NERDTreeFind<CR>
 map <leader>u :UndotreeToggle<CR>
 map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
 map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
@@ -146,7 +145,7 @@ endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <C-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
